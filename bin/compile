@@ -35,9 +35,9 @@ run_mvn "compile" $PRJ_DATA/FarmriseDataRepository $CACHE_DIR
 git clone https://github.com/TheClimateCorporation/farmrise-rabbitmq-executor-heroku $PRJ_RMQ
 run_mvn "compile" $PRJ_RMQ/RabbitMQExecutor $CACHE_DIR
 
-run_mvn "compile" $BUILD_DIR/FarmriseNewsServiceDataRepository $CACHE_DIR
+run_mvn "compile" $BUILD_DIR/FarmRiseNewsServiceDataRepository $CACHE_DIR
 
-run_mvn "compile" $BUILD_DIR/FarmriseNewService $CACHE_DIR
+run_mvn "compile" $BUILD_DIR/FarmRiseNewsService $CACHE_DIR
 
 if has_maven_wrapper $BUILD_DIR; then
   cache_copy ".m2/wrapper" $BUILD_DIR $CACHE_DIR
