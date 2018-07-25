@@ -25,10 +25,10 @@ install_jdk ${BUILD_DIR}
 # download all code and create folder structure
 PRJ_COMMONS=${CACHE_DIR}/commons
 PRJ_DATA=${CACHE_DIR}/data
-git clone https://coolnitz:cc9a6fc584a70efd0ba399ff54b5738fec3dffd6@github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_COMMONS
+git clone https://github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_COMMONS
 
 run_mvn "install" $BUILD_DIR $PRJ_COMMONS/Commons 
-git clone https://coolnit:cc9a6fc584a70efd0ba399ff54b5738fec3dffd6@github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
+git clone https://github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
 
 run_mvn "install" $BUILD_DIR $PRJ_DATA/FarmriseDataRepository
 
