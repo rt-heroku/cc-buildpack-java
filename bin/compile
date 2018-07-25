@@ -29,10 +29,10 @@ git clone https://github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_
 
 echo "Project folder: $PRJ_COMMONS/Commons"
 
-run_mvn "clean install" $PRJ_COMMONS/Commons $CACHE_DIR
+run_mvn "clean compile" $PRJ_COMMONS/Commons $CACHE_DIR
 git clone https://github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
 
-run_mvn "clean install" $PRJ_DATA/FarmriseDataRepository $CACHE_DIR
+run_mvn "clean compile" $PRJ_DATA/FarmriseDataRepository $CACHE_DIR
 
 run_mvn "clean compile" $BUILD_DIR/FarmriseNewService $CACHE_DIR
 
