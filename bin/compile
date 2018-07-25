@@ -27,12 +27,12 @@ PRJ_COMMONS=${CACHE_DIR}/commons
 PRJ_DATA=${CACHE_DIR}/data
 git clone https://github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_COMMONS
 
-run_mvn "install" $BUILD_DIR $PRJ_COMMONS/Commons 
+run_mvn "install" $PRJ_COMMONS/Commons $CACHE_DIR
 git clone https://github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
 
-run_mvn "install" $BUILD_DIR $PRJ_DATA/FarmriseDataRepository
+run_mvn "install" $PRJ_DATA/FarmriseDataRepository $CACHE_DIR
 
-run_mvn "compile" $BUILD_DIR $CACHE_DIR/FarmriseNewService
+run_mvn "compile" $BUILD_DIR/FarmriseNewService $CACHE_DIR
 
 if has_maven_wrapper $BUILD_DIR; then
   cache_copy ".m2/wrapper" $BUILD_DIR $CACHE_DIR
