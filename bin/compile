@@ -25,6 +25,8 @@ install_jdk ${BUILD_DIR}
 # download all code and create folder structure
 PRJ_COMMONS=${BUILD_DIR}/commons
 PRJ_DATA=${BUILD_DIR}/data
+PRJ_RMQ=${BUILD_DIR}/rmq
+
 git clone https://github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_COMMONS
 
 run_mvn "compile" $PRJ_COMMONS/Commons $CACHE_DIR
