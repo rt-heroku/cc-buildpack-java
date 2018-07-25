@@ -33,7 +33,7 @@ run_mvn "compile" $PRJ_COMMONS/Commons $CACHE_DIR
 git clone https://github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
 run_mvn "compile" $PRJ_DATA/FarmriseDataRepository $CACHE_DIR
 git clone https://github.com/TheClimateCorporation/farmrise-rabbitmq-executor-heroku $PRJ_RMQ
-run_mvn "compile" $PRJ_DATA/RabbitMQExecutor $CACHE_DIR
+run_mvn "compile" $PRJ_RMQ/RabbitMQExecutor $CACHE_DIR
 
 run_mvn "compile" $BUILD_DIR/FarmriseNewsServiceDataRepository $CACHE_DIR
 
