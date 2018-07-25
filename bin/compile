@@ -28,7 +28,7 @@ PRJ_DATA=${BUILD_DIR}/data
 git clone https://github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_COMMONS
 
 echo "Project folder: $PRJ_COMMONS/Commons"
-echo "Has maven wrapper: " has_maven_wrapper()
+echo "Has maven wrapper: " has_maven_wrapper
 
 run_mvn compile $PRJ_COMMONS/Commons $CACHE_DIR
 git clone https://github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
