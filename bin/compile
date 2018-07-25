@@ -11,6 +11,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+mv $BUILD_DIR/FarmRiseNewsService/* $BUILD_DIR/.
+
 source $BP_DIR/lib/common.sh
 source $BP_DIR/lib/maven.sh
 source <(curl -s --retry 3 -L $BUILDPACK_STDLIB_URL)
@@ -37,8 +39,7 @@ run_mvn "compile" $PRJ_RMQ/RabbitMQExecutor $CACHE_DIR
 
 run_mvn "compile" $BUILD_DIR/FarmRiseNewsServiceDataRepository $CACHE_DIR
 
-run_mvn "compile" $BUILD_DIR/FarmRiseNewsService $CACHE_DIR
-mv $BUILD_DIR/FarmRiseNewsService/target $BUILD_DIR/.
+run_mvn "compile" $BUILD_DIR $CACHE_DIR
 
 if has_maven_wrapper $BUILD_DIR; then
   cache_copy ".m2/wrapper" $BUILD_DIR $CACHE_DIR
