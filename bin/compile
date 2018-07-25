@@ -38,6 +38,7 @@ run_mvn "compile" $PRJ_RMQ/RabbitMQExecutor $CACHE_DIR
 run_mvn "compile" $BUILD_DIR/FarmRiseNewsServiceDataRepository $CACHE_DIR
 
 run_mvn "compile" $BUILD_DIR/FarmRiseNewsService $CACHE_DIR
+mv $BUILD_DIR/FarmRiseNewsService/target $BUILD_DIR/.
 
 if has_maven_wrapper $BUILD_DIR; then
   cache_copy ".m2/wrapper" $BUILD_DIR $CACHE_DIR
