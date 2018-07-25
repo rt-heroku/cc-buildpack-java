@@ -22,6 +22,16 @@ install_jdk ${BUILD_DIR}
 [ -n "$(find ${BUILD_DIR} -type f -name "*.kt")" ] && mcount "kotlin.source"
 [ -n "$(find ${BUILD_DIR} -type f -name "*.groovy")" ] && mcount "groovy.source"
 
+# download all code and create folder structure
+PRJ_COMMONS=${BUILD_DIR}/commons
+PRJ_DATA=${BUILD_DIR}/data
+git clone https://github.com/TheClimateCorporation/farmrise-commons-heroku $PRJ_COMMONS
+
+run_mvn "install" $PRJ_COMMONS/Commons $CACHE_DIR
+
+git clone https://github.com/TheClimateCorporation/farmrise-data-repository-heroku $PRJ_DATA
+run_mvn "install" $PRJ_DATA/FarmriseDataRepository $CACHE_DIR
+
 run_mvn "compile" $BUILD_DIR $CACHE_DIR
 
 if has_maven_wrapper $BUILD_DIR; then
