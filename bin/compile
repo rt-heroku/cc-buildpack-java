@@ -7,7 +7,7 @@ set -e
 BPLOG_PREFIX="buildpack.java"
 
 BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
-BUILD_DIR=$1
+BUILD_DIR=$1/FarmriseNewService
 CACHE_DIR=$2
 ENV_DIR=$3
 
